@@ -46,9 +46,9 @@ def position_taken?(location)
   return true if ["X", "O"].include?(board[position])
   raise "#{board[position]} is not a valid move"
 end
-  def position_taken?(location)
-    !(position(location) == nil || position(location) == " ")
-  end
+  # def position_taken?(location)
+  #   !(position(location) == nil || position(location) == " ")
+  # end
 
   def valid_move?(input)
     input.to_i.between?(1,9) && !position_taken?(input.to_i - 1)
