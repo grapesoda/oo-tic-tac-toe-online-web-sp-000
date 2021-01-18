@@ -41,11 +41,7 @@ class TicTacToe
     turn_count % 2 == 0 ? "X"  : "O"
   end
 
-def position_taken?(location)
-  return false if [" ", "", nil].include?(position[location])
-  return true if ["X", "O"].include?(position[location])
-  raise "#{position[location]} is not a valid move"
-end
+
   # def position_taken?(location)
   #   !(position(location) == nil || position(location) == " ")
   # end
@@ -53,6 +49,12 @@ end
   def valid_move?(input)
     input.to_i.between?(1,9) && !position_taken?(input.to_i - 1)
   end
+  
+  def position_taken?(location)
+  return false if [" ", "", nil].include?(position[location])
+  return true if ["X", "O"].include?(position[location])
+  raise "#{position[location]} is not a valid move"
+end
 
   def turn
     puts "Please enter 1-9"
