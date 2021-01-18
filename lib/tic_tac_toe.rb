@@ -42,9 +42,9 @@ class TicTacToe
   end
 
 def position_taken?(location)
-  return false if [" ", "", nil].include?(board[position])
-  return true if ["X", "O"].include?(board[position])
-  raise "#{board[position]} is not a valid move"
+  return false if [" ", "", nil].include?(position[location])
+  return true if ["X", "O"].include?(position[location])
+  raise "#{position[location]} is not a valid move"
 end
   # def position_taken?(location)
   #   !(position(location) == nil || position(location) == " ")
